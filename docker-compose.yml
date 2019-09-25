@@ -1,0 +1,24 @@
+version: '2'
+services:
+  web:
+    image: kpfromer/portfolio
+    ports:
+      - '80:3001'
+      - '443:443'
+    environment:
+      - MONGO_URI=mongodb://mongo:27017/portfolio
+      - NODE_ENV=production
+    volumes:
+      - ./cert:/app/cert
+    depends_on:
+      - mongo
+    restart: always
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+    volumes:
+      - data-volume:/data/db
+    restart: always
+volumes:
+  data-volume:

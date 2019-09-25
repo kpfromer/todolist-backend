@@ -1,0 +1,68 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "private": true,
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretty": "prettier --write \"./src/**/*.{ts,ts,js,md}\"",
+    "lint": "eslint --fix \"./src/**/*.{ts,ts,js}\"",
+    "precommit": "lint-staged",
+    "start": "gulp watch",
+    "build": "gulp build"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@hapi/boom": "^7.4.10",
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "convict": "^5.1.0",
+    "cors": "^2.8.5",
+    "del": "^5.1.0",
+    "express": "^4.17.1",
+    "gulp": "^4.0.2",
+    "gulp-nodemon": "^2.4.2",
+    "gulp-typescript": "^5.0.1",
+    "joi": "^14.3.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^5.7.1",
+    "passport": "^0.4.0",
+    "passport-jwt": "^4.0.0",
+    "typegoose": "^5.9.1"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run precommit"
+    }
+  },
+  "devDependencies": {
+    "@types/bcryptjs": "^2.4.2",
+    "@types/body-parser": "^1.17.1",
+    "@types/convict": "^4.2.1",
+    "@types/cors": "^2.8.6",
+    "@types/express": "^4.17.1",
+    "@types/hapi__boom": "^7.4.1",
+    "@types/joi": "^14.3.3",
+    "@types/jsonwebtoken": "^8.3.4",
+    "@types/mongoose": "^5.5.17",
+    "@types/passport": "^1.0.1",
+    "@types/passport-jwt": "^3.0.2",
+    "@typescript-eslint/eslint-plugin": "^2.3.0",
+    "@typescript-eslint/parser": "^2.3.0",
+    "eslint": "^6.4.0",
+    "eslint-config-prettier": "^6.3.0",
+    "eslint-plugin-prettier": "^3.1.1",
+    "eslint-plugin-react": "^7.14.3",
+    "husky": "^3.0.5",
+    "install": "^0.13.0",
+    "lint-staged": "^9.3.0",
+    "npm": "^6.11.3",
+    "prettier": "^1.18.2",
+    "typescript": "^3.6.3"
+  }
+}
