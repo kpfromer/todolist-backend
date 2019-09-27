@@ -5,7 +5,7 @@ const config = convict({
     doc: 'The port for the server',
     env: 'PORT',
     format: 'port',
-    default: 3000
+    default: 3001
   },
   mongoUri: {
     // TODO:
