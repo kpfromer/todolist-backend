@@ -1,3 +1,27 @@
+import joi from 'joi';
+
+export const loginDto = joi
+  .object({
+    email: joi
+      .string()
+      .email()
+      .required(),
+    password: joi.string().required()
+  })
+  .required();
+
+export const registerDto = joi
+  .object({
+    email: joi
+      .string()
+      .email()
+      .required(),
+    firstName: joi.string().required(),
+    lastName: joi.string().required(),
+    password: joi.string().required()
+  })
+  .required();
+
 export type LoginDTO = {
   email: string;
   password: string;

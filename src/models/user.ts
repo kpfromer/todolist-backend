@@ -1,6 +1,6 @@
-import { prop, Typegoose } from 'typegoose';
+import { prop, Typegoose } from '@hasezoey/typegoose';
 
-class UserModel extends Typegoose {
+export class UserModel extends Typegoose {
   @prop({ required: true, unique: true }) public email = '';
   @prop({ required: true }) public firstName = '';
   @prop({ required: true }) public lastName = '';

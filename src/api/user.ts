@@ -1,32 +1,10 @@
 import express from 'express';
-import joi from 'joi';
 import asyncMid from '../middleware/asyncMid';
 import { joiValidate } from '../middleware/joiValidate';
 import UserService from '../services/UserService';
+import { loginDto, registerDto } from '../types/user';
 
 const router = express.Router();
-
-const loginDto = joi
-  .object({
-    email: joi
-      .string()
-      .email()
-      .required(),
-    password: joi.string().required()
-  })
-  .required();
-
-const registerDto = joi
-  .object({
-    email: joi
-      .string()
-      .email()
-      .required(),
-    firstName: joi.string().required(),
-    lastName: joi.string().required(),
-    password: joi.string().required()
-  })
-  .required();
 
 router.post(
   '/login',
@@ -40,7 +18,7 @@ router.post(
       });
     }
     res.json({
-      success: false,
+      success: true,
       data: token
     });
   })
