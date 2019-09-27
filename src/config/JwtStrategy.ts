@@ -15,7 +15,7 @@ const Strategy = new JwtStrategy(options, (jwtPayload, done): void => {
         console.log('User not found in database.');
         done(null, false);
       } else {
-        done(null, user);
+        done(null, { _id: user.id, email: user.email });
       }
     })
     .catch(error => done(error));
